@@ -73,7 +73,7 @@ controller.hears(['(.*)'], 'direct_message,direct_mention,mention', (bot, messag
 	
 	if(ac2 == null)
 	{
-		bot.reply(message, "*No shoutouts were submitted last week!*");
+		bot.reply(message, "*Voting is not open yet!*");
 	}
 	else{
 		
