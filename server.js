@@ -54,13 +54,6 @@ bot.startRTM(err => {
     }
 });
 
-controller.hears(['Destroyself'], 'direct_message,direct_mention,mention', (bot, message) => {
-    bot.reply(message, {
-        text: `Goodbye`
-    });
-	bot.destroy()
-});
-
 
 controller.hears(['(.*)'], 'direct_message,direct_mention,mention', (bot, message) => {
     
@@ -73,7 +66,22 @@ controller.hears(['(.*)'], 'direct_message,direct_mention,mention', (bot, messag
 	
 	if(ac2 == null)
 	{
-		bot.reply(message, "*Voting is not open yet!*");
+		var d = new Date();
+		var n = d.getDay();
+		
+		if(n == 0 || n == 1 || n == 2 || n == 6)
+		
+		{	
+		
+			bot.reply(message, "*Voting has not opened yet, please try again on Wednesday!*");
+		
+		}
+		
+		else{
+	    
+			bot.reply(message, "*No shoutouts were submitted last week!* ");
+		
+		}
 	}
 	else{
 		
